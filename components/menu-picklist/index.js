@@ -232,7 +232,12 @@ var MenuPicklist = (0, _createReactClass2.default)({
     /**
      * Initial selected item index.
      */
-    initValueIndex: _propTypes2.default.number
+    initValueIndex: _propTypes2.default.number,
+
+     /**
+     * Initial selected item index.
+     */
+    selectedIndices: _propTypes2.default.array
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -249,7 +254,7 @@ var MenuPicklist = (0, _createReactClass2.default)({
     return {
       focusedIndex: this.props.initValueIndex ? this.props.initValueIndex : -1,
       selectedIndex: this.props.initValueIndex ? this.props.initValueIndex : -1,
-      selectedIndices: [],
+      selectedIndices: !!(this.props.selectedIndices || []).length ? this.props.selectedIndices : [],
       currentPillLabel: ''
     };
   },

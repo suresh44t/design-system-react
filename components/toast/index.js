@@ -209,6 +209,11 @@ function (_React$Component) {
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
+      if (_this.timeout) {
+        clearTimeout(_this.timeout);
+        _this.timeout = null;
+      }
+      
       _domElementFocus2.default.returnFocusToStoredElement();
     }
   }, {
